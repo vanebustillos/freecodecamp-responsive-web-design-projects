@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1 id="title">Survey Form</h1>
+    <p id="description">Please fill out this form with the required information</p>
+    <form id="survey-form" method="post" action='https://register-demo.freecodecamp.org'>
+      <fieldset>
+        <label id="name-label" for="name">Enter Your Name: <input id="name" name="name" type="text" required placeholder="Vanessa Bustillos"/></label>
+      <label id="email-label" for="email">Enter Your Email: <input id="email" name="email" type="email" required placeholder="vanessabustillos@gmail.com"/></label>
+      <label id="number-label" for="number">Enter Your Age: <input id="number" name="number" type="number" min=0 max=80 placeholder=24 /></label>
+      </fieldset>
+      <fieldset>
+        <label for="dropdown">How did you hear about us?
+          <select id="dropdown" name="dropdown">
+            <option value="">(select one)</option>
+            <option value="1">Facebook</option>
+            <option value="2">LinkedIn</option>
+            <option value="3">News</option>
+            <option value="4">Other</option>
+          </select>
+        </label>
+      </fieldset>
+      
+      <fieldset>
+        <legend>What type of courses would you like to see in the platform?</legend>
+         <label for="cybersecurity"><input id="cybersecurity" type="checkbox" name="course" value="cybersecurity" class="inline" checked>Cybersecurity</label>
+
+         <label for="machine-learning"><input id="machine-learning" type="checkbox" name="course" value="machine-learning" class="inline">Machine Learning</label>
+       
+         <label for="web-development"><input id="web-development" type="checkbox" name="course" value="web-development" class="inline">Web Development</label>
+       
+       <label for="algorithms"> <input id="algorithms" type="checkbox" name="course" value="algorithms" class="inline">Algorithms</label>
+      </fieldset>
+      <fieldset>
+        <legend>Would you recommend us? (required)</legend>
+        <label for="recommended"><input id="recommended" type="radio" name="recommend" class="inline" value="yes" checked /> Yes</label>
+        <label for="not-recommended"><input id="not-recommended" type="radio" name="recommend" class="inline" value="no"/> No</label>
+      <label for="comments">Please, leave any comment or suggestion so we can improve :) :
+          <textarea id="comments" name="comments" rows="3" cols="30" placeholder="I'd like to have the option to download all of my projects..."></textarea>
+        </label>
+      </fieldset>
+      <input id="submit" type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
