@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Piano</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main id="main-doc">
+      <nav id="navbar" class="navbar">
+        <header><h1>Navigation</h1></header>
+        <ol>
+          <li class="nav-section"><a class="nav-link" href="#overview">Overview</a></li>
+          <li class="nav-section"><a class="nav-link" href="#base_url">Base URL</a></li>
+          <li class="nav-section"><a class="nav-link" href="#authentication">Authentication</a></li>
+          <li class="nav-section"><a class="nav-link" href="#endpoints">Endpoints</a></li>
+          <li class="nav-section"><a class="nav-link" href="#error_codes">Error Codes</a></li>
+        </ol>
+      </nav>
+        <section id="overview" class="main-section">
+            <header><h1>Overview</h1></header>
+            <p id="overview-content">The User Management API allows developers to manage user accounts in an application. It provides endpoints for creating, retrieving, updating, and deleting user data.</p>
+        <p>The API enables developers to integrate user management functionalities easily into their applications.</p>
+        <p>It supports a variety of operations, making it versatile for different use cases.</p>
+        <p>Developers can perform these operations using simple HTTP requests, which is efficient and effective.</p>
+        <p>All actions require proper authentication to ensure secure access to the data.</p>
+        </section>
+        <section id="base_url" class="main-section">
+          <header><h1>Base URL</h1></header>
+          <code>https://api.example.com/v1/users</code>
+          <p>This is the root URL that all API requests are sent to.</p>
+        <p>All endpoints are relative to this base URL.</p>
+        <p>Ensure that the correct version of the API (v1) is used for compatibility.</p>
+        <p>If the version of the API changes, the base URL may be updated accordingly.</p>
+        </section>
+        <section id="authentication" class="main-section">
+          <header><h1>Authentication</h1></header>
+          <code>Authorization: Bearer YOUR_API_KEY</code>
+          <p>Authentication is required to use the API securely.</p>
+        <p>Each request must include an API key in the Authorization header.</p>
+        <p>Your API key can be obtained by signing up for an account with the API provider.</p>
+        <p>Ensure that your API key is kept confidential to avoid unauthorized access.</p>
+      
+        </section>
+        <section id="endpoints" class="main-section">
+          <header><h1>Endpoints</h1></header>
+          <div> 
+            <h2>1. Create a new User</h2>
+            <h3>Endpoint:</h3>
+            <code>POST /users</code>
+            <h3>Request Body::</h3>
+            <code>{
+              "name": "John Doe",
+              "email": "john.doe@example.com",
+              "password": "securepassword"
+            }</code>
+            <h3>Response:</h3>
+            <code>{
+              "id": "12345",
+              "name": "John Doe",
+              "email": "john.doe@example.com",
+              "created_at": "2025-02-15T12:00:00Z"
+            }</code>
+          </div>
+         
+          <div> 
+            <h2>2. Retrieve User Information</h2>
+            <h3>Endpoint:</h3>
+            <code>GET /users/{id}</code>
+            <h3>Response:</h3>
+            <code>{
+              "id": "12345",
+              "name": "John Doe",
+              "email": "john.doe@example.com",
+              "created_at": "2025-02-15T12:00:00Z"
+            }</code>
+          </div>
+
+          <div> 
+            <h2>3. Update User Information</h2>
+            <h3>Endpoint:</h3>
+            <code>PUT /users/{id}</code>
+            <h3>Request Body::</h3>
+            <code>{
+              "name": "Johnathan Doe",
+              "email": "john.doe@example.com"
+            }</code>
+            <h3>Response:</h3>
+            <code>{
+              "id": "12345",
+              "name": "Johnathan Doe",
+              "email": "john.doe@example.com",
+              "updated_at": "2025-02-15T13:00:00Z"
+            }</code>
+          </div>
+
+          <div> 
+            <h2>4. Delete User</h2>
+            <h3>Endpoint:</h3>
+            <code>DELETE /users/{id}</code>
+            <h3>Response:</h3>
+            <code>{
+              "message": "User deleted successfully"
+            }</code>
+          </div>
+        </section>
+        <section id="error_codes" class="main-section">
+          <header><h1>Error Codes</h1></header>
+          <ul>
+            <li>400: Bad Request (invalid input)</li>
+            <li>401: Unauthorized (invalid API key)</li>
+            <li>404: User not found</li>
+            <li>429: Too many responses</li>
+            <li>500: Internal server error</li>
+          </ul>
+        </section>
+    </main>
+  </body>
+</html>
